@@ -3,6 +3,7 @@ import { useState } from "react";
 import Form from "./componentes/Form";
 import Map from "./componentes/Map";
 import { Contenedor } from "./elementos/Formularios";
+import { calculateCost } from "./functions/calculateCost";
 
 const App = () => {
   const { isLoaded } = useJsApiLoader({
@@ -19,36 +20,9 @@ const App = () => {
   const [cost, setCost] = useState(0);
 
   const clearRoute = () => {
-    console.log(directionsResponse);
     setDirectionsResponse(null);
     setDistance(null);
     setDuration(null);
-  };
-
-  const calculatePrice = (distance) => {
-    if (distance <= 100) {
-      setCost(100);
-    }
-
-    if (distance > 100 && distance <= 200) {
-      setCost(130);
-    }
-
-    if (distance > 200 && distance <= 400) {
-      setCost(170);
-    }
-
-    if (distance > 400 && distance <= 700) {
-      setCost(210);
-    }
-
-    if (distance > 700 && distance <= 1000) {
-      setCost(1250);
-    }
-
-    if (distance > 1000) {
-      setCost(350);
-    }
   };
 
   const calculateRoute = async (origin, destination) => {
@@ -61,7 +35,7 @@ const App = () => {
     setDirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
-    calculatePrice(parseFloat(results.routes[0].legs[0].distance.text));
+    setCost(calculateCost(parseFloat(results.routes[0].legs[0].distance.text.replace(/,/g, ''))));
   };
 
   const handleSubmit = (e) => {
@@ -77,16 +51,11 @@ const App = () => {
     calculateRoute(origin, obj.address);
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  }
-
   return isLoaded ? (
     <main>
       <Contenedor>
         <Form
           clearRoute={clearRoute}
-          handleChange={handleChange}
           handleSubmit={handleSubmit}
           origin={origin}
           data={data}

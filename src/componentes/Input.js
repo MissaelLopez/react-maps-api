@@ -6,13 +6,14 @@ const ComponenteInput = ({ tipo, nombre, label, validateKey }) => {
     <Containertwo>
       <Input
         maxLength={nombre === "celular" ? "10" : "100"}
+        minLength={nombre === "celular" ? "10" : "0"}
         required
         type={tipo}
         id={nombre}
         placeholder=" "
         onKeyDown={validateKey}
       />
-      <Label for={nombre}>{label}:</Label>
+      <Label htmlFor={nombre}>{label}:</Label>
       <Span></Span>
     </Containertwo>
   );
