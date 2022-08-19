@@ -19,7 +19,7 @@ const Form = (props) => {
     MySwal.fire({
       width: '800px',
       title: "Aviso de Privacidad",
-      html: `<p style="text-align: justify;">EnviosApp, con domicilio en Calle 5 de Mayo, 391, Col. Los Pinos III, Ocosingo, Chiapas, México y portal de internet http://localhost:3000/, es el responsable del uso y protección de sus datos personales, y al respecto le informamos lo siguiente:</p>
+      html: `<p style="text-align: justify;">EnviosApp, con domicilio en Calle 5 de Mayo, 391, Col. Los Pinos III, Ocosingo, Chiapas, México y portal de internet https://envios-webapp.herokuapp.com/, es el responsable del uso y protección de sus datos personales, y al respecto le informamos lo siguiente:</p>
       <br>
       <p style="text-align: justify; font-weight: bold;">¿Para qué fines utilizaremos sus datos personales?</p>
       <p style="text-align: justify;">Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio que solicita:</p>
@@ -66,7 +66,7 @@ const Form = (props) => {
       <p style="text-align: justify; font-weight: bold;">¿Cómo puede conocer los cambios en este aviso de privacidad?
       </p>
       <br>
-      <p style="text-align: justify;">El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad; de cambios en nuestro modelo de negocio, o por otras causas. Nos comprometemos a mantener actualizado este aviso de privacidad sobre los cambios que pueda sufrir y siempre podrá consultar las actualizaciones que existan en el sitio web http://localhost:3000/.</p>
+      <p style="text-align: justify;">El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad; de cambios en nuestro modelo de negocio, o por otras causas. Nos comprometemos a mantener actualizado este aviso de privacidad sobre los cambios que pueda sufrir y siempre podrá consultar las actualizaciones que existan en el sitio web https://envios-webapp.herokuapp.com/.</p>
       <br>
       <p style="text-align: justify;">Última actualización de este aviso de privacidad: 19/08/2022</p>
       `,
